@@ -1,0 +1,52 @@
+/* body {
+    background-image: url("resources/img/books.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
+} */
+
+body {
+    background-image: url("resources/img/blue\ strip.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top;
+}
+
+#searchbar {
+    position: absolute;
+    top: 4.3%; left: 78%;
+    height: 3%; width: 13%;
+}
+
+#search_button {
+    position: absolute;
+    top: 4.3%; left: 91.3%;
+    height: 3%;
+}
+
+#home_icon {
+    font-size: x-large;
+    position: absolute;
+    top: 2%; left: 2%;
+    color: white;
+}
+
+h1 {
+    font-size: 90px;
+    color: rgb(14, 42, 81);
+    position: absolute;
+    top: 25%; left: 25%;
+    width: 50%;
+}
+
+#big_searchbar {
+    position: absolute;
+    top: 50%; left: 25%;
+    width: 47.5%; height: 10%;
+    font-size: xx-large;
+}
+
+
+
