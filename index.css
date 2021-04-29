@@ -14,26 +14,48 @@ body {
     background-position: top;
 }
 
-#searchbar {
-    position: absolute;
-    top: 4.3%; left: 78%;
-    height: 3%; width: 13%;
+#search-nav{
+    position: relative;
+    top: 25px;
+    width: 60%;
+    float: right;
 }
 
-#search_button {
-    position: absolute;
-    top: 4.3%; left: 91.3%;
-    height: 3%;
+#search-area {
+    display: inline;
+    float: right;
 }
 
-#home_icon {
-    font-size: x-large;
-    position: absolute;
-    top: 2%; left: 2%;
+.nav-link{
+    display: inline;
+    font-size: large;
     color: white;
+    padding-right: 20px;
 }
 
-h1 {
+#searchbar {
+    display: inline;
+    float: left;
+}
+
+#search_button{
+    display: inline;
+    float: left;
+
+}
+
+
+.link-group {
+    font-size: x-large;
+    color: white;
+    display: inline;
+    float: left;
+    padding-right: 10px;
+}
+
+
+
+#mid-text {
     font-size: 90px;
     color: rgb(14, 42, 81);
     position: absolute;
@@ -45,7 +67,13 @@ h1 {
     position: absolute;
     top: 50%; left: 25%;
     width: 47.5%; height: 10%;
-    font-size: xx-large;
+    font-size: medium;
+}
+
+
+#tablebox {
+    position: absolute;
+    top: 75%; left: 25%;
 }
 
 

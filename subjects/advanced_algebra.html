@@ -1,0 +1,137 @@
+<!doctype HTML>
+<html>
+    <script>
+        var current_question = 1;
+        var score = 0;
+        var last_question = 3;
+
+        let answer_keys = {
+            1 : "A",
+            2 : "C",
+            3 : "D",
+            4 : "B",
+            5 : "A"
+        }
+
+
+        var submitted  = false;
+
+
+
+
+        function displayQuestion(number) {
+            window.submitted = false;
+            document.getElementById("ans-msg").innerHTML = "";
+            window.current_question = number;
+            document.getElementById("question-content").innerHTML = document.getElementById("question-" + window.current_question).innerHTML;
+            document.getElementById("answer-selection").innerHTML = document.getElementById("choices-" + window.current_question).innerHTML;
+            if (current_question == last_question){
+                document.getElementById("next-finish").onclick = finish;
+            }
+        }
+
+        
+
+        function checkAnswer() {
+            if (!document.forms["form-" + window.current_question]["answer"].value){
+                document.getElementById("ans-msg").innerHTML = "<p id=\"correct-msg\" style=\"color:red; \">Please select an answer!</p>";
+                return;  
+            }
+            if (submitted){
+                document.getElementById("ans-msg").innerHTML = "<p id=\"correct-msg\" style=\"color:red; \">Question already submitted</p>";
+                return;
+            }
+            // check the answer
+            submitted = true;
+            let ans = document.forms["form-" + window.current_question]["answer"].value;
+            if (ans == answer_keys[window.current_question]){
+                score += 1;
+                document.getElementById("ans-msg").innerHTML = "<p id=\"correct-msg\" style=\"color:green;\">Correct</p>";
+            } else {
+                document.getElementById("ans-msg").innerHTML = "<p id=\"correct-msg\" style=\"color:red; \">Wrong</p>";
+            }
+        }
+
+
+        function finish() {
+            document.getElementById("question-content").innerHTML = "";
+            document.getElementById("answer-selection").innerHTML = "";
+            document.getElementById("next-finish").hidden = true;
+            document.getElementById("ans-msg").innerText = "Your score was " + score + "/" + last_question;
+        }
+    </script>
+
+    <style>
+        .question-list {
+            visibility: hidden;
+        }
+    </style>
+
+
+
+    <body>
+        <!---The current question being displayed go in here-->
+        <div id="question-content">
+            A contractor must pay a penalty if their project work is not completed on time. The first day penalty is $300, and the penalty increases to $500 on the second day, and $700 on the third day, so forth. The contractor accumulated a total penalty cost of $4500. How many days overdue was this project?
+        </div>
+        <div id="answer-selection">
+            <form name="form-1">
+                <input type="radio" id="A" name="answer" value="A">
+                <label for="A">A) 23</label><br>
+                <input type="radio" id="B" name="answer" value="B">
+                <label for="B">B) 22</label><br>
+                <input type="radio" id="C" name="answer" value="C">
+                <label for="C">C) 23</label><br>
+                <input type="radio" id="D" name="answer" value="D">
+                <label for="D">D) 23</label><br>
+                <input type="button" value="submit" onclick="checkAnswer()">
+            </form>
+        </div>
+        <div id="ans-msg"></div>
+        <input id ="next-finish" type="button" value="Next" onclick="displayQuestion(window.current_question+1)">
+        <div id="home">
+            <a href="../website.html">Back to Home</a>
+        </div>
+        <!--This is a list of questions which are hidden by default-->
+
+            <div class="question-list question" id="question-2">
+                Mr. Smith puts $1000 into an account that earns 4.5% annual interest. The interest is compounded annually and there are no withdrawals. How much money will be in his account at the end of 30 years? (round to nearest hundredth place decimal)
+            </div>
+            <div class="choices question-list" id="choices-2">
+                <form name="form-2">
+                    <input type="radio" id="A" name="answer" value="A">
+                    <label for="A">A) $3745.32</label><br>
+                    <input type="radio" id="B" name="answer" value="B">
+                    <label for="B">B) $345.23</label><br>
+                    <input type="radio" id="C" name="answer" value="C">
+                    <label for="C">C) $5983.23</label><br>
+                    <input type="radio" id="D" name="answer" value="D">
+                    <label for="D">D) $6796.11</label><br>
+                    <input type="button" value="submit" onclick="checkAnswer()">
+                </form>
+            </div>
+
+
+            <div class="question-list question" id="question-3">
+                33333333333Mr. Smith puts $1000 into an account that earns 4.5% annual interest. The interest is compounded annually and there are no withdrawals. How much money will be in his account at the end of 30 years? (round to nearest hundredth place decimal)
+            </div>
+            <div class="choices question-list" id="choices-3">
+                <form name="form-3" >
+                    <input type="radio" id="A" name="answer" value="A">
+                    <label for="A">A) $3745.32</label><br>
+                    <input type="radio" id="B" name="answer" value="B">
+                    <label for="B">B) $345.23</label><br>
+                    <input type="radio" id="C" name="answer" value="C">
+                    <label for="C">C) $5983.23</label><br>
+                    <input type="radio" id="D" name="answer" value="D">
+                    <label for="D">D) $6796.11</label><br>
+                    <input type="button" value="submit" onclick="checkAnswer()">
+                </form>
+            </div>
+        </div>
+
+
+
+
+    </body>
+</html>
